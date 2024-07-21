@@ -1,4 +1,4 @@
-# cheese
+# Queso Costeño project
 This project aims to solve an optimization problem for a cheese supply chain using different optimizations.
 The main methods used are bio-inspired optimizations, done by using already implemented libraries.
 
