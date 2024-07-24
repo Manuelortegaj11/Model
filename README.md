@@ -49,4 +49,3 @@ $$
 This function operates within the restrictions above
 
 
-# Model
