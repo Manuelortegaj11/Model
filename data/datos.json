@@ -1,0 +1,36 @@
+{
+  "demanda": 500,
+  "cTiempo": 10,
+  "centros_acopio": [
+    {
+      "id": 1,
+      "stock": 100,
+      "produccion_potencial": 50,
+      "precio": 20,
+      "costo_transporte": 5,
+      "tiempo_alistamiento": 2,
+      "tiempo_transporte": 3
+    },
+    {
+      "id": 2,
+      "stock": 150,
+      "produccion_potencial": 30,
+      "precio": 22,
+      "costo_transporte": 6,
+      "tiempo_alistamiento": 1,
+      "tiempo_transporte": 4
+    }
+    // Añadir más centros de acopio según sea necesario
+  ],
+  "centro_acopio_principal": {
+    "id": 0,
+    "stock": 200,
+    "produccion_potencial": 100,
+    "precio": 25,
+    "costo_transporte": 4,
+    "tiempo_alistamiento": 2,
+    "tiempo_transporte": 2
+  },
+  "tiempo_max_definido": 24
+}
+
