@@ -20,6 +20,8 @@ El modelo de optimización presentado está diseñado para gestionar la demanda 
 - **Demanda**: Cantidad de producto solicitada por el cliente.
 - **Stock(CAi)**: Stock del producto en el centro de acopio **CAi**.
 - **Ppotencial(CAi)**: Cantidad de producto que potencialmente puede estar disponible en poco tiempo (potencial del día).
+  
+---
 
 ## Datos de Entrada
 
@@ -33,9 +35,14 @@ El modelo de optimización presentado está diseñado para gestionar la demanda 
 - **tiempos_transporte**: Tiempos de Transporte (**TiempoTransp(CAi)**).
 - **tiempo_alistamiento**: Tiempos de Alistamiento (**TiempoAlistam(CAi)**).
 
-## Schema
-The $` n `$ collection centers are represented as a vector, each with a defined quantity $` x `$.
-The quantity for the $`i`$th position represents the amount of the total demand $` D `$ that collection center $` j_i `$ is going to supply.
+Claro, aquí tienes la traducción al español:
+
+---
+
+## Esquema
+
+Los centros de acopio $` n `$ se representan como un vector, cada uno con una cantidad definida $` x `$.
+La cantidad para la posición $` i `$ representa la cantidad de la demanda total $` D `$ que el centro de acopio $` j_i `$ va a suministrar.
 
 $$
 \begin{array} {|r|r|r|r|r|r|}
@@ -44,6 +51,8 @@ $$
 \end{array}
 \quad \therefore \quad x_i = cacopios_i
 $$
+
+---
 
 ## Función Objetivo
 
@@ -78,9 +87,5 @@ Tiempo(CAi) = Tiempo_{\text{Alistam}}(CAi) + Tiempo_{\text{Transp}}(CAi)
 \[
 Tiempo_{\text{Alistam}}(CAi) \leq Tiempo_{\text{MaxDefinido}} \quad \text{para } i=0 \ldots N
 \]
-
----
-
-Puedes copiar y pegar este texto en tu archivo README para describir el modelo de optimización. ¿Necesitas algo más?
 
 
