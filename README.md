@@ -4,6 +4,10 @@
 
 El modelo de optimización presentado está diseñado para gestionar la demanda de queso costeño a través de una plataforma de marketing, utilizando múltiples centros de acopio. El objetivo principal es minimizar los costos asociados con el cumplimiento de la demanda del cliente, considerando los costos de transporte, tiempos de alistamiento y producción potencial en los centros de acopio.
 
+## Objetivo
+
+El objetivo del modelo de optimización es asignar de manera eficiente cada demanda de queso a un centro de acopio principal, asegurando que se minimice el costo total del producto/s. En situaciones en las que el centro de acopio principal no tenga suficiente stock para satisfacer completamente la demanda, este debe poder solicitar cantidades adicionales a otros centros de acopio disponibles. El modelo considera varias restricciones críticas para garantizar la viabilidad de la solución: se asegura de que la cantidad total de queso enviada desde los centros de acopio satisfaga la demanda total, que el stock y la producción potencial de cada centro sean respetados, y que el tiempo combinado de alistamiento y transporte no exceda un límite máximo permitido. Además, se implementan restricciones para equilibrar el transporte entre centros de acopio y asegurar que el centro de acopio principal maneje efectivamente la cantidad total de demanda. La solución final debe identificar el centro de acopio principal más adecuado para cada demanda, optimizando la asignación de queso y el transporte entre centros de manera que se mantenga dentro de las restricciones de tiempo y capacidad, garantizando así una operación eficiente y costo-efectiva.
+
 ## Variables del Problema
 
 - **N**: Número de centros de acopio.
@@ -20,6 +24,8 @@ El modelo de optimización presentado está diseñado para gestionar la demanda 
 - **Demanda**: Cantidad de producto solicitada por el cliente.
 - **Stock(CAi)**: Stock del producto en el centro de acopio **CAi**.
 - **Ppotencial(CAi)**: Cantidad de producto que potencialmente puede estar disponible en poco tiempo (potencial del día).
+  
+---
 
 ## Datos de Entrada
 
@@ -33,42 +39,55 @@ El modelo de optimización presentado está diseñado para gestionar la demanda 
 - **tiempos_transporte**: Tiempos de Transporte (**TiempoTransp(CAi)**).
 - **tiempo_alistamiento**: Tiempos de Alistamiento (**TiempoAlistam(CAi)**).
 
+
+---
+
+## Esquema
+
+Los centros de acopio $` n `$ se representan como un vector, cada uno con una cantidad definida $` x `$.
+La cantidad para la posición $` i `$ representa la cantidad de la demanda total $` D `$ que el centro de acopio $` j_i `$ va a suministrar.
+
+$$
+\begin{array} {|r|r|r|r|r|r|}
+    \hline x_0 & x_1 & x_2 & x_3 & \cdots & x_n \\
+    \hline
+\end{array}
+\quad \therefore \quad x_i = cacopios_i
+$$
+
+---
+
 ## Función Objetivo
 
 Minimizar:
 
-\[
-\sum_{i=1, i \neq p}^{N} \left[ K(CAi) \cdot Precio(CAi) + K(CAi) \cdot cTransp(CAi) + Tiempo(CAi) \cdot cTiempo \right] + \left[ K(CAp) \cdot Precio(CAp) + Demanda \cdot cTransp(CAp) + Tiempo(CAp) \cdot cTiempo \right]
-\]
+$$
+\sum_{i=1, i \neq p}^{N} \left[ K(CA_i) \cdot Precio(CA_i) + K(CA_i) \cdot cTransp(CA_i) + Tiempo(CA_i) \cdot cTiempo \right] + \left[ K(CA_p) \cdot Precio(CA_p) + Demanda \cdot cTransp(CA_p) + Tiempo(CA_p) \cdot cTiempo \right]
+$$
 
 ## Restricciones
 
 1. **Restricción de Demanda:**
 
-\[
-\sum_{i=0}^{N} K(CAi) = Demanda
-\]
+$$
+\sum_{i=0}^{N} K(CA_i) = Demanda
+$$
 
 2. **Restricción de Stock y Producción Potencial:**
 
-\[
-K(CAi) \leq Stock(CAi) + P_{\text{potencial}}(CAi) \quad \text{para } i=0 \ldots N
-\]
+$$
+K(CA_i) \leq Stock(CA_i) + P_{\text{potencial}}(CA_i) \quad \text{para } i=0 \ldots N
+$$
 
 3. **Cálculo del Tiempo Total:**
 
-\[
-Tiempo(CAi) = Tiempo_{\text{Alistam}}(CAi) + Tiempo_{\text{Transp}}(CAi)
-\]
+$$
+Tiempo(CA_i) = Tiempo_{\text{Alistam}}(CA_i) + Tiempo_{\text{Transp}}(CA_i)
+$$
 
 4. **Restricción de Tiempo de Alistamiento:**
 
-\[
-Tiempo_{\text{Alistam}}(CAi) \leq Tiempo_{\text{MaxDefinido}} \quad \text{para } i=0 \ldots N
-\]
-
----
-
-Puedes copiar y pegar este texto en tu archivo README para describir el modelo de optimización. ¿Necesitas algo más?
-
+$$
+Tiempo_{\text{Alistam}}(CA_i) \leq Tiempo_{\text{MaxDefinido}} \quad \text{para } i=0 \ldots N
+$$
 
