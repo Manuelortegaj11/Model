@@ -39,7 +39,6 @@ El objetivo del modelo de optimización es asignar de manera eficiente cada dema
 - **tiempos_transporte**: Tiempos de Transporte (**TiempoTransp(CAi)**).
 - **tiempo_alistamiento**: Tiempos de Alistamiento (**TiempoAlistam(CAi)**).
 
-Claro, aquí tienes la traducción al español:
 
 ---
 
@@ -57,6 +56,7 @@ $$
 $$
 
 ---
+
 ## Función Objetivo
 
 Minimizar:
