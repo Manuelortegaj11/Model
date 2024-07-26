@@ -53,26 +53,37 @@ $$
 $$
 
 ---
-
 ## Función Objetivo
 
 Minimizar:
 
-\sum_{i=1, i \neq p}^{N} \left[ K(CAi) \cdot Precio(CAi) + K(CAi) \cdot cTransp(CAi) + Tiempo(CAi) \cdot cTiempo \right] + \left[ K(CAp) \cdot Precio(CAp) + Demanda \cdot cTransp(CAp) + Tiempo(CAp) \cdot cTiempo \right]
+$$
+\sum_{i=1, i \neq p}^{N} \left[ K(CA_i) \cdot Precio(CA_i) + K(CA_i) \cdot cTransp(CA_i) + Tiempo(CA_i) \cdot cTiempo \right] + \left[ K(CA_p) \cdot Precio(CA_p) + Demanda \cdot cTransp(CA_p) + Tiempo(CA_p) \cdot cTiempo \right]
+$$
 
 ## Restricciones
 
 1. **Restricción de Demanda:**
-\sum_{i=0}^{N} K(CAi) = Demanda
+
+$$
+\sum_{i=0}^{N} K(CA_i) = Demanda
+$$
 
 2. **Restricción de Stock y Producción Potencial:**
-K(CAi) \leq Stock(CAi) + P_{\text{potencial}}(CAi) \quad \text{para } i=0 \ldots N
+
+$$
+K(CA_i) \leq Stock(CA_i) + P_{\text{potencial}}(CA_i) \quad \text{para } i=0 \ldots N
+$$
 
 3. **Cálculo del Tiempo Total:**
-Tiempo(CAi) = Tiempo_{\text{Alistam}}(CAi) + Tiempo_{\text{Transp}}(CAi)
+
+$$
+Tiempo(CA_i) = Tiempo_{\text{Alistam}}(CA_i) + Tiempo_{\text{Transp}}(CA_i)
+$$
 
 4. **Restricción de Tiempo de Alistamiento:**
-Tiempo_{\text{Alistam}}(CAi) \leq Tiempo_{\text{MaxDefinido}} \quad \text{para } i=0 \ldots N
 
-
+$$
+Tiempo_{\text{Alistam}}(CA_i) \leq Tiempo_{\text{MaxDefinido}} \quad \text{para } i=0 \ldots N
+$$
 
