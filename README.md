@@ -33,6 +33,18 @@ El modelo de optimización presentado está diseñado para gestionar la demanda 
 - **tiempos_transporte**: Tiempos de Transporte (**TiempoTransp(CAi)**).
 - **tiempo_alistamiento**: Tiempos de Alistamiento (**TiempoAlistam(CAi)**).
 
+## Schema
+The $` n `$ collection centers are represented as a vector, each with a defined quantity $` x `$.
+The quantity for the $`i`$th position represents the amount of the total demand $` D `$ that collection center $` j_i `$ is going to supply.
+
+$$
+\begin{array} {|r|r|r|r|r|r|}
+    \hline x_0 & x_1 & x_2 & x_3 & \cdots & x_n \\
+    \hline
+\end{array}
+\quad \therefore \quad x_i = cacopios_i
+$$
+
 ## Función Objetivo
 
 Minimizar:
