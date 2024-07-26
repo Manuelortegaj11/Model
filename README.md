@@ -65,19 +65,16 @@ Minimizar:
 ## Restricciones
 
 1. **Restricción de Demanda:**
-
 \sum_{i=0}^{N} K(CAi) = Demanda
 
 2. **Restricción de Stock y Producción Potencial:**
-
 K(CAi) \leq Stock(CAi) + P_{\text{potencial}}(CAi) \quad \text{para } i=0 \ldots N
 
 3. **Cálculo del Tiempo Total:**
-
 Tiempo(CAi) = Tiempo_{\text{Alistam}}(CAi) + Tiempo_{\text{Transp}}(CAi)
 
 4. **Restricción de Tiempo de Alistamiento:**
-
 Tiempo_{\text{Alistam}}(CAi) \leq Tiempo_{\text{MaxDefinido}} \quad \text{para } i=0 \ldots N
+
 
 
