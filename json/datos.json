@@ -1,0 +1,39 @@
+{
+    "demanda": 60,
+    "centros_acopio": [
+        {"Id_CA": 1, "Stock": 10, "Ppotencial": 0.5, "Precio": 5000, "CtranspCli": 21841, "TiempoTranspCli": 37, "TiempoAlistam": 10},
+        {"Id_CA": 2, "Stock": 12, "Ppotencial": 0.625, "Precio": 10000, "CtranspCli": 21180, "TiempoTranspCli": 42, "TiempoAlistam": 9},
+        {"Id_CA": 3, "Stock": 4, "Ppotencial": 14.0, "Precio": 15000, "CtranspCli": 24132, "TiempoTranspCli": 32, "TiempoAlistam": 47},
+        {"Id_CA": 4, "Stock": 8, "Ppotencial": 13.0, "Precio": 2000, "CtranspCli": 14215, "TiempoTranspCli": 34, "TiempoAlistam": 41},
+        {"Id_CA": 5, "Stock": 18, "Ppotencial": 15.0, "Precio": 30000, "CtranspCli": 21654, "TiempoTranspCli": 22, "TiempoAlistam": 42},
+        {"Id_CA": 6, "Stock": 6, "Ppotencial": 14.0, "Precio": 50000, "CtranspCli": 20303, "TiempoTranspCli": 41, "TiempoAlistam": 16},
+        {"Id_CA": 7, "Stock": 12, "Ppotencial": 13.0, "Precio": 15000, "CtranspCli": 24553, "TiempoTranspCli": 32, "TiempoAlistam": 5},
+        {"Id_CA": 8, "Stock": 2, "Ppotencial": 12.5, "Precio": 3000, "CtranspCli": 21658, "TiempoTranspCli": 16, "TiempoAlistam": 37},
+        {"Id_CA": 9, "Stock": 30, "Ppotencial": 15.0, "Precio": 30000, "CtranspCli": 14528, "TiempoTranspCli": 27, "TiempoAlistam": 26},
+        {"Id_CA": 10, "Stock": 15, "Ppotencial": 18.0, "Precio": 19000, "CtranspCli": 23424, "TiempoTranspCli": 39, "TiempoAlistam": 19}
+    ],
+    "costos_transporte": [
+        [0, 17071, 29902, 28862, 22693, 26892, 22793, 20966, 21399, 12712],
+        [17071, 0, 20339, 12897, 28898, 15196, 16108, 14577, 21908, 17243],
+        [29902, 20339, 0, 23705, 24941, 20198, 26903, 23788, 22812, 24456],
+        [28862, 12897, 23705, 0, 22424, 20542, 19060, 12041, 19133, 19640],
+        [22693, 28898, 24941, 22424, 0, 16321, 22995, 14321, 15803, 13582],
+        [26892, 15196, 20198, 20542, 16321, 0, 13500, 17573, 21569, 25485],
+        [22793, 16108, 26903, 19060, 22995, 13500, 0, 21993, 16491, 22089],
+        [20966, 14577, 23788, 12041, 14321, 17573, 21993, 0, 29942, 26153],
+        [21399, 21908, 22812, 19133, 15803, 21569, 16491, 29942, 0, 17745],
+        [12712, 17243, 24456, 19640, 13582, 25485, 22089, 26153, 17745, 0]
+    ],
+    "tiempos_transporte": [
+        [0, 35, 19, 44, 21, 43, 34, 19, 12, 22],
+        [35, 0, 44, 17, 43, 45, 22, 46, 29, 15],
+        [19, 44, 0, 35, 23, 15, 44, 30, 32, 26],
+        [44, 17, 35, 0, 46, 28, 40, 41, 12, 20],
+        [21, 43, 23, 46, 0, 13, 28, 12, 28, 35],
+        [43, 45, 15, 28, 13, 0, 24, 46, 17, 23],
+        [34, 22, 44, 40, 28, 24, 0, 37, 19, 43],
+        [19, 46, 30, 41, 12, 46, 37, 0, 46, 47],
+        [12, 29, 32, 12, 28, 17, 19, 46, 0, 23],
+        [22, 15, 26, 20, 35, 23, 43, 47, 23, 0]
+    ]
+}
